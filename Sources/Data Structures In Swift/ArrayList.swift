@@ -6,7 +6,7 @@
 //
 import Foundation
 
-struct DSArray<Element> {
+struct ArrayList<Element> {
     
     var length: Int = 0
     var data: [Int: Element] = [:]

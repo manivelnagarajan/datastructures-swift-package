@@ -8,16 +8,16 @@
 import XCTest
 @testable import Data_Structures_In_Swift
 
-final class DSArrayTests: XCTestCase {
-    var array: DSArray<Int> = DSArray()
+final class ArrayListTests: XCTestCase {
+    var array: ArrayList<Int> = ArrayList()
 
     func testEmptyArray() {
-        array = DSArray()
+        array = ArrayList()
         XCTAssertEqual(array.length, 0)
     }
     
     func testGetElement() {
-        array = DSArray()
+        array = ArrayList()
         array.append(1)
         array.append(2)
         array.append(3)
@@ -27,14 +27,14 @@ final class DSArrayTests: XCTestCase {
     }
     
     func testAppend() {
-        array = DSArray()
+        array = ArrayList()
         array.append(1)
         array.append(2)
         XCTAssertEqual(array.length, 2)
     }
     
     func testDeleteLast() {
-        array = DSArray()
+        array = ArrayList()
         array.append(1)
         array.append(2)
         array.deleteLast()
@@ -43,7 +43,7 @@ final class DSArrayTests: XCTestCase {
     }
     
     func testDeleteAtSpecificIndex() {
-        array = DSArray()
+        array = ArrayList()
         array.append(1)
         array.append(2)
         array.append(3)
@@ -53,7 +53,7 @@ final class DSArrayTests: XCTestCase {
     }
     
     func testInsertAtSpecificIndex() {
-        array = DSArray()
+        array = ArrayList()
         array.append(1)
         array.append(3)
         array.insert(2, at: 1)
