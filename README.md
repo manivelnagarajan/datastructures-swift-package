@@ -3,7 +3,7 @@
 This is an open source swift package with Data structures implementation with test cases.
 
  * ArrayList
- * HashMap
+ * HashTable
  * SinglyLinkedList
  * DoublyLinkedList
  * Stack
