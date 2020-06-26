@@ -33,4 +33,20 @@ final class HashTableTests: XCTestCase {
         XCTAssertTrue(hashTable.count == 1)
         XCTAssertNil(hashTable["test"])
     }
+    
+    func testUpdateValue() {
+        hashTable = HashTable(capacity: 2)
+        hashTable["test"] = 1
+        hashTable["test"] = 2
+        XCTAssertTrue(hashTable["test"] == 2)
+        XCTAssertTrue(hashTable.count == 1)
+    }
+    
+    func testKeys() {
+        hashTable = HashTable(capacity: 2)
+        hashTable["key1"] = 1
+        hashTable["key2"] = 2
+        XCTAssertTrue(hashTable.keys().count == 2)
+        XCTAssertTrue(hashTable.keys().contains("key2"))
+    }
 }

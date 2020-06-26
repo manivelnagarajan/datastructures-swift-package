@@ -48,6 +48,8 @@ struct HashTable<Key: Hashable, Value> {
         let element = Element(key: key, value: value)
         if self.buckets[index].isEmpty {
             count += 1
+        } else {
+            self.buckets[index] = []
         }
         self.buckets[index].append(element)
     }
@@ -55,6 +57,16 @@ struct HashTable<Key: Hashable, Value> {
     mutating func removeValue(for key: Key) {
         let index = self.index(for: key)
         self.buckets[index] = []
+    }
+    
+    func keys() -> [Key] {
+        var keys: [Key] = []
+        for bucket in buckets {
+            if let element = bucket.first {
+                keys.append(element.key)
+            }
+        }
+        return keys
     }
     
     private func index(for key: Key) -> Int {
