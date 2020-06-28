@@ -1,5 +1,5 @@
 //
-//  LinkedListTests.swift
+//  DoublyDoublyLinkedListTests.swift
 //  
 //
 //  Created by Manivel Nagarajan on 28/06/20.
@@ -8,19 +8,18 @@
 import XCTest
 @testable import Data_Structures_In_Swift
 
-final class LinkedListTests: XCTestCase {
-    
-    var linkedList: LinkedList<String> = LinkedList()
+final class DoublyLinkedListTests: XCTestCase {
+    var linkedList: DoublyLinkedList<String> = DoublyLinkedList()
     
     func testAppendElement() {
-        linkedList = LinkedList()
+        linkedList = DoublyLinkedList()
         linkedList.append(value: "test")
         XCTAssertTrue(linkedList.count == 1)
         XCTAssertTrue(linkedList.head!.data == "test")
     }
 
     func testPrependElement() {
-        linkedList = LinkedList()
+        linkedList = DoublyLinkedList()
         linkedList.prepend(value: "test")
         XCTAssertTrue(linkedList.count == 1)
         XCTAssertTrue(linkedList.head!.data == "test")
@@ -32,7 +31,7 @@ final class LinkedListTests: XCTestCase {
     }
     
     func testInsertElement() {
-        linkedList = LinkedList()
+        linkedList = DoublyLinkedList()
         linkedList.append(value: "0")
         linkedList.append(value: "3")
         linkedList.append(value: "4")
@@ -42,7 +41,7 @@ final class LinkedListTests: XCTestCase {
     }
     
     func testGetValue() {
-        linkedList = LinkedList()
+        linkedList = DoublyLinkedList()
         linkedList.insert(value: "0", at: 0)
         linkedList.append(value: "1")
         linkedList.append(value: "3")
@@ -51,7 +50,7 @@ final class LinkedListTests: XCTestCase {
     }
     
     func testDelete() {
-        linkedList = LinkedList()
+        linkedList = DoublyLinkedList()
         linkedList.insert(value: "0", at: 0)
         linkedList.append(value: "1")
         linkedList.append(value: "1")
@@ -59,5 +58,5 @@ final class LinkedListTests: XCTestCase {
         linkedList.delete(at: 2)
         XCTAssertTrue(linkedList.value(at: 2) == "2")
     }
+    
 }
-
