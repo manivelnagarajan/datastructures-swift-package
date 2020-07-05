@@ -6,6 +6,8 @@ public func allTests() -> [XCTestCaseEntry] {
         testCase(ArrayListTests.allTests),
         testCase(HashTableTests.allTests),
         testCase(LinkedListTests.allTests),
+        testCase(DoublyLinkedListTests.allTests),
+        testCase(StackTests.allTests),
     ]
 }
 #endif

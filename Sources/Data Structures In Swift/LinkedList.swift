@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Node<Element> {
+class Node<Element: Equatable>: Equatable {
     var data: Element!
     var next: Node?
     
@@ -15,9 +15,13 @@ class Node<Element> {
         self.data = data
         self.next = next
     }
+    
+    static func ==(lhs: Node<Element>, rhs: Node<Element>) -> Bool {
+        return lhs.data == rhs.data
+    }
 }
 
-struct LinkedList<Element> {
+struct LinkedList<Element: Equatable> {
 
     var head: Node<Element>? = nil
     var tail: Node<Element>? = nil
