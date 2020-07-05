@@ -8,14 +8,15 @@
 import Foundation
 
 //Stack implementation using LinkedList
+//LIFO - Last In First Out
 struct Stack<Element: Equatable> {
     
     var top: Node<Element>?
     var bottom: Node<Element>?
     var length = 0
     
-    var peek: Node<Element>? {
-        return top
+    var peek: Element? {
+        return top?.data
     }
     
     mutating func push(_ value: Element) {

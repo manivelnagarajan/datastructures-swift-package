@@ -48,9 +48,9 @@ final class StackTests: XCTestCase {
         stack = Stack()
         stack.push("Hi")
         stack.push("How are you?")
-        XCTAssertTrue(stack.peek?.data == "How are you?")
+        XCTAssertTrue(stack.peek == "How are you?")
         stack.pop()
-        XCTAssertTrue(stack.peek?.data == "Hi")
+        XCTAssertTrue(stack.peek == "Hi")
         stack.pop()
         XCTAssertNil(stack.peek)
     }
