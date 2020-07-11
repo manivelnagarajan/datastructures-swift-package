@@ -13,7 +13,7 @@ final class HashTableTests: XCTestCase {
     var hashTable: HashTable<String, Int> = HashTable(capacity: 1)
     
     func testSetKeyValuePair() {
-        hashTable = HashTable(capacity: 3)
+        hashTable = HashTable(capacity: 10)
         hashTable["a"] = 1
         hashTable["b"] = 2
         XCTAssertTrue(hashTable.count == 2)

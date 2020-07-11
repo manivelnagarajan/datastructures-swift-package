@@ -20,7 +20,7 @@ class TreeNode {
 struct BSTree {
     var root: TreeNode?
     
-    mutating func insert(value: Int) {
+    mutating func insert(_ value: Int) {
         let newNode = TreeNode(value: value)
         if root == nil {
             root = newNode
@@ -62,7 +62,69 @@ struct BSTree {
         return nil
     }
     
-    func remove(value: Int) {
+    mutating func remove(_ value: Int) {
+        if root == nil {
+            return
+        }
         
+        var currentNode = root
+        var parentNode: TreeNode? = nil
+        while currentNode != nil {
+            if value < currentNode!.value {
+                parentNode = currentNode
+                currentNode = currentNode?.left
+            } else if value > currentNode!.value {
+                parentNode = currentNode
+                currentNode = currentNode?.right
+            } else if value == currentNode!.value {
+                
+                if currentNode?.right == nil {
+                    //Option 1: No right child
+                    if parentNode == nil {
+                        root = currentNode?.left
+                    } else {
+                        if currentNode!.value < parentNode!.value {
+                            parentNode?.left = currentNode?.left
+                        } else if currentNode!.value > parentNode!.value {
+                            parentNode?.right = currentNode?.left
+                        }
+                    }
+                } else if currentNode?.right?.left == nil {
+                    //Option 2: Right child which doesn't have left child
+                    if parentNode == nil {
+                        root = currentNode?.right
+                    } else {
+                        if currentNode!.value < parentNode!.value {
+                            parentNode?.left = currentNode?.right
+                        } else if currentNode!.value > parentNode!.value {
+                            parentNode?.right = currentNode?.right
+                        }
+                    }
+                } else {
+                    //Option 3: Right child that has a left child
+                    var leftMost = currentNode?.right?.left
+                    var leftMostParent = currentNode?.right
+                    while leftMost?.left != nil {
+                        leftMostParent = leftMost
+                        leftMost = leftMost?.left
+                    }
+                    
+                    leftMostParent?.left = leftMost?.right
+                    leftMost?.left = currentNode?.left
+                    leftMost?.right = currentNode?.right
+                    
+                    if parentNode == nil {
+                        root = leftMost
+                    } else {
+                        if currentNode!.value < parentNode!.value {
+                            parentNode?.left = leftMost
+                        } else if currentNode!.value > parentNode!.value {
+                            parentNode?.right = leftMost
+                        }
+                    }
+                }
+                return
+            }
+        }
     }
 }
