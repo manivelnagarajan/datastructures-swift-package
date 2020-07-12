@@ -43,7 +43,7 @@ final class HashTableTests: XCTestCase {
     }
     
     func testKeys() {
-        hashTable = HashTable(capacity: 10)
+        hashTable = HashTable(capacity: 100)
         hashTable["key1"] = 1
         hashTable["key2"] = 2
         XCTAssertTrue(hashTable.keys().count == 2)
