@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  Factorial.swift
 //  
 //
 //  Created by Manivel Nagarajan on 02/08/20.
@@ -9,7 +9,7 @@ import Foundation
 
 extension Int {
     
-    private func  previous() -> Int {
+    func  previous() -> Int {
         return self - 1
     }
     
