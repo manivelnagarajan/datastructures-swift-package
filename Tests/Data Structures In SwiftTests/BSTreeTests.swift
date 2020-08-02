@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import Data_Structures_In_Swift
+@testable import Data_Structures_and_Algorithms_In_Swift
 
 final class BSTreeTests: XCTestCase {
     var tree = BSTree()
