@@ -22,7 +22,7 @@ let package = Package(
             name: "Data Structures and Algorithms In Swift",
             dependencies: []),
         .testTarget(
-            name: "Data Structures In SwiftTests",
+            name: "Data Structures and Algorithms In SwiftTests",
             dependencies: ["Data Structures and Algorithms In Swift"]),
     ]
 )
