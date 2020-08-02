@@ -12,7 +12,15 @@ This is an open source swift package with Data structures implementation with te
  * BinarySearchTree
  * Graph
 
-##Algorithms
+## Algorithms
+### Recursion
  * Factorial using Recursion
  * Fibonacci using Recursion
+ ### Sorting
+ * Bubble Sort
+ * Selection Sort
+ * Insertion Sort
+ * Merge Sort
+ * Quick Sort
+ 
  
